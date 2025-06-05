@@ -12,6 +12,7 @@ vcpkg_from_github(
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS
+    -DWITH_AMPL=ON
      -DWITH_IPOPT=ON
      -DWITH_SELFCONTAINED=OFF
      -DWITH_TINYXML=OFF
