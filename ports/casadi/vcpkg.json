@@ -14,12 +14,6 @@
     {
       "name": "vcpkg-cmake-config",
       "host": true
-    },
-    {
-      "name": "pkgconf"
-    },
-    {
-      "name": "coin-or-ipopt"
     }
   ]
 }

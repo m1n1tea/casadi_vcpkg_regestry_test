@@ -12,7 +12,12 @@ vcpkg_from_github(
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS
-    -DWITH_AMPL=ON
+     -DWITH_BUILD_IPOPT=ON
+     -DWITH_MUMPS=ON
+     -DWITH_BUILD_MUMPS=ON
+     -DWITH_LAPACK=ON
+     -DWITH_BUILD_LAPACK=ON
+     -DWITH_BUILD_METIS=ON
      -DWITH_IPOPT=ON
      -DWITH_SELFCONTAINED=OFF
      -DWITH_TINYXML=OFF
@@ -38,5 +43,5 @@ configure_file("${CMAKE_CURRENT_LIST_DIR}/usage" "${CURRENT_PACKAGES_DIR}/share/
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 vcpkg_copy_tools(TOOL_NAMES casadi-cli AUTO_CLEAN)
-set(ENV{PKG_CONFIG} "${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/tools/pkgconf/pkgconf")
+#set(ENV{PKG_CONFIG} "${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/tools/pkgconf/pkgconf")
 
