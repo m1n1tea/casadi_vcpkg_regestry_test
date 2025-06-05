@@ -1,0 +1,14 @@
+diff --git a/casadi/interfaces/ipopt/CMakeLists.txt b/casadi/interfaces/ipopt/CMakeLists.txt
+index aa09fd295..2a7892ead 100644
+--- a/casadi/interfaces/ipopt/CMakeLists.txt
++++ b/casadi/interfaces/ipopt/CMakeLists.txt
+@@ -1,5 +1,9 @@
+ cmake_minimum_required(VERSION 3.10.2)
+ 
++if(NOT WITH_BUILD_IPOPT)
++  find_package(IPOPT REQUIRED)
++endif()
++
+ set(NLPSOL_IPOPT_SRCS
+   ipopt_interface.hpp
+   ipopt_interface.cpp

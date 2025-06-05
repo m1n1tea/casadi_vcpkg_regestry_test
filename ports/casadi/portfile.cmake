@@ -7,11 +7,13 @@ vcpkg_from_github(
     REF "${VERSION}"
     SHA512 884711734e3753e1e0b769777aa9c05af87f61f04455758f02199a5f574968e02f4c92bbc071bcb9a19230b4a5a790cf597a64c7c3ba3e423aaccfaa85f0f739
     HEAD_REF main
+    PATCHES ipopt.patch
 )
 
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS
+     -DWITH_IPOPT=ON
      -DWITH_SELFCONTAINED=OFF
      -DWITH_TINYXML=OFF
      -DWITH_BUILD_TINYXML=OFF
@@ -36,3 +38,5 @@ configure_file("${CMAKE_CURRENT_LIST_DIR}/usage" "${CURRENT_PACKAGES_DIR}/share/
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 vcpkg_copy_tools(TOOL_NAMES casadi-cli AUTO_CLEAN)
+set(ENV{PKG_CONFIG} "${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/tools/pkgconf/pkgconf")
+
