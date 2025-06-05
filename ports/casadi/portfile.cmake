@@ -5,9 +5,8 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO casadi/casadi
     REF "${VERSION}"
-    SHA512 0
+    SHA512 884711734e3753e1e0b769777aa9c05af87f61f04455758f02199a5f574968e02f4c92bbc071bcb9a19230b4a5a790cf597a64c7c3ba3e423aaccfaa85f0f739
     HEAD_REF main
-    PATCHES relocatable.patch disable_fortran.patch namespace.cmake
 )
 
 vcpkg_cmake_configure(
